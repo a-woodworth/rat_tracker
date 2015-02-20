@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  location: MyString
+  search: false
+  bait: false
+  description: MyText
+  first_name: MyString
+  last_name: MyString
+  email: MyString
+  mobile: MyString
+  public.boolean: MyString
+
+two:
+  location: MyString
+  search: false
+  bait: false
+  description: MyText
+  first_name: MyString
+  last_name: MyString
+  email: MyString
+  mobile: MyString
+  public.boolean: MyString

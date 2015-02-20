@@ -1,0 +1,79 @@
+<h2>Awesome! You got it. Does this look right?</h2>
+
+<!-- Validation failure messages -->
+
+<% if @sighting.errors.any? %>
+<% @sighting.errors.full_messages.each do |message| %>
+<div class="alert alert-dismissable alert-danger">
+  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+  <%= message %>
+</div>
+<% end %>
+<% end %>
+
+<!-- Responsive panel example -->
+
+<div class="row">
+  <div class="col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8">
+    <!-- <div class="panel panel-default"> -->
+    <!-- removed border around form -->
+    <div class="panel-body">
+      <%= form_tag confirm_sighting_url, :method => "get", :class => "form-horizontal" do %>
+      <!-- Label and input for location -->
+      <div class="form-group">
+        <label for="location" class="col-sm-2 control-label">
+          Location
+        </label>
+        <div class="col-sm-10">
+          <input type="text" id="location" name="location" placeholder="will pre-populate from geocode" class="form-control" value="<%= @sighting.location %>">
+        </div>
+      </div>
+
+      <!-- Label and input for search -->
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+          <div class="checkbox">
+            <label for="search">
+              <input type="checkbox" id="search" name="search" value="1" <%= "checked" %>>
+              You would like this location inspected for rats
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Label and input for bait -->
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+          <div class="checkbox">
+            <label for="bait">
+              <input type="checkbox" id="bait" name="bait" value="1" <%= "checked" %>>
+              You would like the city to bait this location <br> <small>Using various rodent elimination techniques </small>
+            </label>
+          </div>
+        </div>
+      </div>
+      <!-- Label and input for public -->
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+          <div class="checkbox">
+            <label for="public">
+              <input type="checkbox" id="public" name="public" value="1" <%= "checked" %>>
+              This complaint will be public record
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+          <input type="submit" value="Confirm" class="btn btn-success">
+          or
+          <a href="/">Cancel</a>
+        </div>
+      </div>
+      <% end %>
+    </div>
+    <!-- </div> -->
+  </div>
+</div>
+
+<!-- End responsive panel example -->
