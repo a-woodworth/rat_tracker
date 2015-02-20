@@ -1,0 +1,13 @@
+Builtin Browsers' Geolocation:
+http://www.w3schools.com/html/tryit.asp?filename=tryhtml5_geolocation
+**Pass the that data to the gem and get back the address
+
+Mechanize after saving everything in your database:
+http://docs.seattlerb.org/mechanize/EXAMPLES_rdoc.html
+
+
+
+Plotting the sightings:
+Parse the rat city's api ruby-soda (https://github.com/socrata/soda-ruby)
+API LINK http://dev.socrata.com/foundry/#/data.cityofchicago.org/97t6-zrhs
+Plotting markers on Google Maps (talk to me again)
