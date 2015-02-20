@@ -1,10 +1,43 @@
 class SightingsController < ApplicationController
 
-  def home
+  def new
+      @sighting = Sighting.new
 
+    end
+
+    def confirm
+      @sighting = Sighting.new
+      @sighting.location = params[:location]
+      @sighting.search = params[:search]
+      @sighting.bait = params[:bait]
+      @sighting.city_record_ok = params[:city_record_ok]
+
+    end
+
+    def create
+     @sighting = Sighting.new
+     @sighting.location = params[:location]
+     @sighting.search = params[:search]
+     @sighting.bait = params[:bait]
+     @sighting.description = params[:description]
+     @sighting.first_name = params[:first_name]
+     @sighting.last_name = params[:last_name]
+     @sighting.email = params[:email]
+     @sighting.mobile = params[:mobile]
+     @sighting.city_record_ok = params[:city_record_ok]
+     @sighting.latitude = params[:latitude]
+     @sighting.longitude = params[:longitude]
+
+     if @sighting.save
+      redirect_to complete_url, :notice => "Sighting created successfully."
+    else
+      render 'confirm'
+    end
   end
-  def map
+  def home
+  end
 
+  def map
   end
 
   def new
@@ -12,42 +45,13 @@ class SightingsController < ApplicationController
 
   end
 
-  def confirm
-    @sighting = Sighting.new
-    @sighting.location = params[:location]
-    @sighting.search = params[:search]
-    @sighting.bait = params[:bait]
-    @sighting.public = params[:public]
-
+  def complete
   end
 
-  def create
-   @sighting = Sighting.new
-   @sighting.location = params[:location]
-   @sighting.search = params[:search]
-   @sighting.bait = params[:bait]
-   @sighting.description = params[:description]
-   @sighting.first_name = params[:first_name]
-   @sighting.last_name = params[:last_name]
-   @sighting.email = params[:email]
-   @sighting.mobile = params[:mobile]
-   @sighting.public = params[:public]
-
-   if @sighting.save
-    redirect_to complete_url, :notice => "Sighting created successfully."
-  else
-    render 'confirm'
+  def index
   end
-end
 
-def complete
+  def show
+  end
 
-end
-def index
-
-end
-
-def show
-
-end
 end
