@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+# Add gem to geocode coordinates for form submission
+gem 'geocoder'
+
 gem 'starter_generators', :git => "git://github.com/rbetina/starter_generators.git", :branch => "panels"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
