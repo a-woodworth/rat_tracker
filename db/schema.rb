@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150220213124) do
+ActiveRecord::Schema.define(version: 20150220222500) do
 
   create_table "sightings", force: :cascade do |t|
     t.string   "location"
@@ -22,9 +22,9 @@ ActiveRecord::Schema.define(version: 20150220213124) do
     t.string   "last_name"
     t.string   "email"
     t.string   "mobile"
-    t.boolean  "public",      default: true
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
+    t.boolean  "city_record_ok", default: true
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
     t.float    "latitude"
     t.float    "longitude"
   end
