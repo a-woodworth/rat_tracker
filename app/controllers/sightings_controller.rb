@@ -1,20 +1,19 @@
 class SightingsController < ApplicationController
 
+  def home
+  end
+
+  def index
+  end
+
+  def show
+  end
+
   def new
       @sighting = Sighting.new
+  end
 
-    end
-
-    def confirm
-      @sighting = Sighting.new
-      @sighting.location = params[:location]
-      @sighting.search = params[:search]
-      @sighting.bait = params[:bait]
-      @sighting.city_record_ok = params[:city_record_ok]
-
-    end
-
-    def create
+  def create
      @sighting = Sighting.new
      @sighting.location = params[:location]
      @sighting.search = params[:search]
@@ -34,19 +33,18 @@ class SightingsController < ApplicationController
       render 'confirm'
     end
   end
-  def home
+
+  def edit
+    @sighting = Sighting.new
+    @sighting.location = params[:location]
+    @sighting.search = params[:search]
+    @sighting.bait = params[:bait]
+    @sighting.city_record_ok = params[:city_record_ok]
+
   end
 
-  def map
+  def update
   end
 
-  def complete
-  end
-
-  def index
-  end
-
-  def show
-  end
 
 end
