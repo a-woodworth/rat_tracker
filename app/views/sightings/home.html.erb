@@ -1,11 +1,44 @@
-<h1>See a rat?</h1>
 
-<h3>Report it and be done!</h3>
+<!DOCTYPE html>
+<html>
+<head>
+  <title> Rat Tracker</title>
+  <style type="text/css">
+    .center-block {display: block; margin-left: auto; margin-right: auto}
+    .footer {position: fixed; left: 0px;bottom: 0px; height: 30px; width: 100%}
 
-<%= link_to (image_tag"rat.gif", :width => 500), new_sighting_url%>
+  }
 
-<!-- Add link and button to map page  -->
+</style>
+</head>
+<body>
+<!--
+  <div class="col-xs-6 col-sm-4"> -->
+   <div style= "text-align: center" >
 
-<%= link_to (image_tag"rat.gif", :width => 500), 'sightings#index' %>
+    <h1 class="text-center"> <strong>See a rat?</strong></h1>
+
+    <h3 class="text-center">Report it and be done!</h3>
+
+    <!--    <div class="text-align"> -->
+
+
+    <%= link_to (image_tag"rat tracker.gif", :width => 500), new_sighting_url%>
+    <!--    </div> -->
+
+     <%=image_tag "skyline.gif", :width => "100%"%>
+  </div>
+
+  <!-- Add link and button to map page  -->
+
+  <%#= link_to (image_tag"rat.gif", :width => 500), map_url%>
+
+
+</body>
+</html>
+
+
+
+</div>
 
 

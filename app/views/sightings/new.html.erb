@@ -1,3 +1,9 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Create a Report</title>
+</head>
+<body>
 <h2>Awesome! You got it. Does this look right?</h2>
 
 <!-- Validation failure messages -->
@@ -12,28 +18,6 @@
 <% end %>
 
 <!-- Responsive panel example -->
-
-<p>Click the button to get your coordinates.</p>
-
-<button onclick="getLocation()">Try It</button>
-
-<p id="demo"></p>
-
-<script>
-var x = document.getElementById("demo");
-
-function getLocation() {
-    if (navigator.geolocation) {
-        navigator.geolocation.watchPosition(showPosition);
-    } else {
-        x.innerHTML = "Geolocation is not supported by this browser.";}
-    }
-
-function showPosition(position) {
-    x.innerHTML="Latitude: " + position.coords.latitude +
-    "<br>Longitude: " + position.coords.longitude;
-}
-</script>
 
 <div class="row">
   <div class="col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8">
@@ -74,13 +58,12 @@ function showPosition(position) {
           </div>
         </div>
       </div>
-
       <!-- Label and input for public -->
       <div class="form-group">
         <div class="col-sm-offset-2 col-sm-10">
           <div class="checkbox">
-            <label for="city_record_ok">
-              <input type="checkbox" id="city_record_ok" name="city_record_ok" value="1" <%= "checked" %>>
+            <label for="public">
+              <input type="checkbox" id="public" name="public" value="1" <%= "checked" %>>
               This complaint will be public record
             </label>
           </div>
@@ -100,3 +83,6 @@ function showPosition(position) {
 </div>
 
 <!-- End responsive panel example -->
+
+</body>
+</html>
