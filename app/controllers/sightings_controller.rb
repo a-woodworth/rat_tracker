@@ -43,7 +43,7 @@ class SightingsController < ApplicationController
     @sighting.mobile = params[:mobile]
 
     if @sighting.save
-      redirect_to sightings_url, :notice => "Rat reported successfully."
+      redirect_to sighting_url, :notice => "Rat reported successfully."
     else
       render 'edit'
     end
