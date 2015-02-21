@@ -30,6 +30,22 @@ class SightingsController < ApplicationController
   end
 
   def update
-  end
+    @sighting = Sighting.find(params[:id])
 
+    @sighting.address = params[:address]
+#    params[:look_for_rats]
+#    params[:bait]
+#    params[:city_record_ok]
+    @sighting.description = params[:description]
+    @sighting.first_name = params[:first_name]
+    @sighting.last_name = params[:last_name]
+    @sighting.email = params[:email]
+    @sighting.mobile = params[:mobile]
+
+    if @sighting.save
+      redirect_to sightings_url, :notice => "Rat reported successfully."
+    else
+      render 'edit'
+    end
+  end
 end

@@ -10,26 +10,17 @@
 
   <!-- Label and input for look_for_rats -->
   <div class="form-group">
-    <%= f.label :look_for_rats, "Inspect this location for rats", :class => "col-sm-2 control-label" %>
-      <div class="col-sm-10">
     <%= f.hidden_field :look_for_rats, :class => "form-control" %>
-    </div>
   </div>
 
   <!-- Label and input for bait -->
   <div class="form-group">
-    <%= f.label :bait, "Bait this location", :class => "col-sm-2 control-label" %>
-      <div class="col-sm-10">
     <%= f.hidden_field :bait, :class => "form-control" %>
-    </div>
   </div>
 
   <!-- Label and input for city_record_ok -->
   <div class="form-group">
-    <%= f.label :city_record_ok, "Bait this location", :class => "col-sm-2 control-label" %>
-      <div class="col-sm-10">
     <%= f.hidden_field :city_record_ok, :class => "form-control" %>
-    </div>
   </div>
 
   <!-- Label and input for description -->
@@ -74,9 +65,9 @@
 
   <div class="form-group">
     <div class="col-sm-offset-2 col-sm-10">
-      <input type="submit" value="Confirm" class="btn btn-success">
+    <%= f.submit "Submit", :class => "btn btn-success" %>
       or
-      <a href="/">Cancel</a>
+      <%= link_to "Cancel", new_sighting_path %>
     </div>
   </div>
   <% end %>
