@@ -2,9 +2,52 @@
 
   <!-- Label and input for location -->
   <div class="form-group">
-    <%= f.label :address, "Address", :class => "col-sm-2 control-label" %>
     <div class="col-sm-10">
     <%= f.text_field :address, :class => "form-control", :placeholder => "Address goes here" %>
+    </div>
+  </div>
+
+
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+    <%= f.submit "Submit", :class => "btn btn-success" %>
+      or
+      <%= link_to "Go back", new_sighting_path %>
+    </div>
+  </div>
+
+  <!-- Label and input for description -->
+  <div class="form-group">
+    <div class="col-sm-10">
+    <%= f.text_area :description, :class => "form-control", :placeholder => "Details: number of rats, if you see a nest, etc." %>
+    </div>
+  </div>
+
+  <!-- Label and input for first_name -->
+  <div class="form-group">
+    <div class="col-sm-10">
+    <%= f.text_field :first_name, :class => "form-control", :placeholder => "First name" %>
+    </div>
+  </div>
+
+  <!-- Label and input for last_name -->
+  <div class="form-group">
+    <div class="col-sm-10">
+    <%= f.text_field :last_name, :class => "form-control", :placeholder => "Last name" %>
+    </div>
+  </div>
+
+  <!-- Label and input for email -->
+  <div class="form-group">
+    <div class="col-sm-10">
+    <%= f.text_field :email, :class => "form-control", :placeholder => "Email address" %>
+    </div>
+  </div>
+
+  <!-- Label and input for mobile -->
+  <div class="form-group">
+    <div class="col-sm-10">
+    <%= f.text_field :mobile, :class => "form-control", :placeholder => "Phone (888-888-8888)" %>
     </div>
   </div>
 
@@ -21,54 +64,6 @@
   <!-- Label and input for city_record_ok -->
   <div class="form-group">
     <%= f.hidden_field :city_record_ok, :class => "form-control" %>
-  </div>
-
-  <!-- Label and input for description -->
-  <div class="form-group">
-    <%= f.label :description, "Description", :class => "col-sm-2 control-label" %>
-    <div class="col-sm-10">
-    <%= f.text_area :description, :class => "form-control", :placeholder => "Optional...describe the rat's nest area or where you spotted it." %>
-    </div>
-  </div>
-
-  <!-- Label and input for first_name -->
-  <div class="form-group">
-    <%= f.label :first_name, "First Name", :class => "col-sm-2 control-label" %>
-    <div class="col-sm-10">
-    <%= f.text_field :first_name, :class => "form-control", :placeholder => "First name" %>
-    </div>
-  </div>
-
-  <!-- Label and input for last_name -->
-  <div class="form-group">
-    <%= f.label :last_name, "Last Name", :class => "col-sm-2 control-label" %>
-    <div class="col-sm-10">
-    <%= f.text_field :last_name, :class => "form-control", :placeholder => "Last name" %>
-    </div>
-  </div>
-
-  <!-- Label and input for email -->
-  <div class="form-group">
-    <%= f.label :email, "Email address", :class => "col-sm-2 control-label" %>
-    <div class="col-sm-10">
-    <%= f.text_field :email, :class => "form-control", :placeholder => "Email address" %>
-    </div>
-  </div>
-
-  <!-- Label and input for mobile -->
-  <div class="form-group">
-    <%= f.label :mobile, "Phone number", :class => "col-sm-2 control-label" %>
-    <div class="col-sm-10">
-    <%= f.text_field :mobile, :class => "form-control", :placeholder => "888-888-8888" %>
-    </div>
-  </div>
-
-  <div class="form-group">
-    <div class="col-sm-offset-2 col-sm-10">
-    <%= f.submit "Submit", :class => "btn btn-success" %>
-      or
-      <%= link_to "Cancel", new_sighting_path %>
-    </div>
   </div>
   <% end %>
 </div>
