@@ -40,11 +40,6 @@ class SightingsController < ApplicationController
   def map
   end
 
-  def new
-    @sighting = Sighting.new
-
-  end
-
   def complete
   end
 
