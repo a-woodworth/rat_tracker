@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
 #Home page
-get '/',                    :controller => 'sightings', :action => 'home'
+root to: 'sightings#new'
 
 #Create
 
@@ -19,7 +19,7 @@ get '/sightings/:id',       :controller => 'sightings', :action => 'show',
 
 # Update:
 get '/sightings/:id/edit',  :controller => 'sightings', :action => 'edit',
-                            :as => 'confirm_sighting'
+                            :as => 'edit_sighting'
 
 patch '/sightings/:id',     :controller => 'sightings', :action => 'update'
 

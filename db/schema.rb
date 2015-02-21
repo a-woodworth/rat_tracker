@@ -14,7 +14,7 @@
 ActiveRecord::Schema.define(version: 20150220222500) do
 
   create_table "sightings", force: :cascade do |t|
-    t.string   "location"
+    t.string   "address"
     t.boolean  "search"
     t.boolean  "bait"
     t.text     "description"

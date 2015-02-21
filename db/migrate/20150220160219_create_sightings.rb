@@ -1,7 +1,7 @@
 class CreateSightings < ActiveRecord::Migration
   def change
     create_table :sightings do |t|
-      t.string :location
+      t.string :address
       t.boolean :search
       t.boolean :bait
       t.text :description

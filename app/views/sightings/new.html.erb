@@ -1,88 +1,37 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Create a Report</title>
-</head>
-<body>
-<h2>Awesome! You got it. Does this look right?</h2>
+<style type="text/css">
+  .center-block {display: block; margin-left: auto; margin-right: auto}
+  .footer {position: fixed; left: 0px;bottom: 0px; height: 30px; width: 100%}
+  .button {text-decoration: none}
+</style>
 
-<!-- Validation failure messages -->
+<div style= "text-align: center" >
 
-<% if @sighting.errors.any? %>
-<% @sighting.errors.full_messages.each do |message| %>
-<div class="alert alert-dismissable alert-danger">
-  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-  <%= message %>
-</div>
-<% end %>
-<% end %>
+  <h1 class="text-center"> <strong>See a rat?</strong></h1>
+  <h3 class="text-center">Click the icon and report it!</h3>
 
-<!-- Responsive panel example -->
+  <%= form_tag sightings_path, id: "sighting-form" do %>
+    <%= hidden_field_tag :latitude, "", id: "latitude" %>
+    <%= hidden_field_tag :longitude, "", id: "longitude" %>
+    <%= image_tag "rat tracker.gif", :width => 500, onclick: "getLocation()" %>
+  <% end %>
 
-<div class="row">
-  <div class="col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8">
-    <!-- <div class="panel panel-default"> -->
-    <!-- removed border around form -->
-    <div class="panel-body">
-      <%= form_tag confirm_sighting_url(:id), :method => "get", :class => "form-horizontal" do %>
-      <!-- Label and input for location -->
-      <div class="form-group">
-        <label for="location" class="col-sm-2 control-label">
-          Location
-        </label>
-        <div class="col-sm-10">
-          <input type="text" id="location" name="location" placeholder="will pre-populate from geocode" class="form-control" value="<%= @sighting.location %>">
-        </div>
-      </div>
-
-      <!-- Label and input for search -->
-      <div class="form-group">
-        <div class="col-sm-offset-2 col-sm-10">
-          <div class="checkbox">
-            <label for="search">
-              <input type="checkbox" id="search" name="search" value="1" <%= "checked" %>>
-              You would like this location inspected for rats
-            </label>
-          </div>
-        </div>
-      </div>
-
-      <!-- Label and input for bait -->
-      <div class="form-group">
-        <div class="col-sm-offset-2 col-sm-10">
-          <div class="checkbox">
-            <label for="bait">
-              <input type="checkbox" id="bait" name="bait" value="1" <%= "checked" %>>
-              You would like the city to bait this location <br> <small>Using various rodent elimination techniques </small>
-            </label>
-          </div>
-        </div>
-      </div>
-      <!-- Label and input for public -->
-      <div class="form-group">
-        <div class="col-sm-offset-2 col-sm-10">
-          <div class="checkbox">
-            <label for="public">
-              <input type="checkbox" id="public" name="public" value="1" <%= "checked" %>>
-              This complaint will be public record
-            </label>
-          </div>
-        </div>
-      </div>
-      <div class="form-group">
-        <div class="col-sm-offset-2 col-sm-10">
-          <input type="submit" value="Confirm" class="btn btn-success">
-          or
-          <a href="/">Cancel</a>
-        </div>
-      </div>
-      <% end %>
-    </div>
-    <!-- </div> -->
-  </div>
+  <%#= link_to (image_tag"rat tracker.gif", :width => 500), new_sighting_url%>
+  <%=image_tag "skyline.gif", :width => "100%"%>
 </div>
 
-<!-- End responsive panel example -->
+<script>
+  var $latitudeField = $("#latitude");
+  var $longitudeField = $("#longitude");
 
-</body>
-</html>
+  function getLocation() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(addPositionsToForm);
+    }
+  }
+
+  function addPositionsToForm(position) {
+    $latitudeField.val(position.coords.latitude);
+    $longitudeField.val(position.coords.longitude);
+    $('#sighting-form').submit();
+  }
+</script>
