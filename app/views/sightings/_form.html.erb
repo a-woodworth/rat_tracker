@@ -74,10 +74,9 @@
 
   <div class="form-group">
     <div class="col-sm-offset-2 col-sm-10">
-
-      <input type="submit" value="Confirm" class="btn btn-success">
+    <%= f.submit "Submit", :class => "btn btn-success" %>
       or
-      <a href="/">Cancel</a>
+      <%= link_to "Cancel", new_sighting_path %>
     </div>
   </div>
   <% end %>
