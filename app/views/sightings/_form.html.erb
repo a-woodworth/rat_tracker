@@ -2,17 +2,17 @@
 
   <!-- Label and input for location -->
   <div class="form-group">
-    <%= f.label :location, "Location", :class => "col-sm-2 control-label" %>
+    <%= f.label :address, "Address", :class => "col-sm-2 control-label" %>
     <div class="col-sm-10">
-    <%= f.text_field :location, :class => "form-control", :placeholder => "Address goes here" %>
+    <%= f.text_field :address, :class => "form-control", :placeholder => "Address goes here" %>
     </div>
   </div>
 
-  <!-- Label and input for search -->
+  <!-- Label and input for look_for_rats -->
   <div class="form-group">
-    <%= f.label :search, "Inspect this location for rats", :class => "col-sm-2 control-label" %>
+    <%= f.label :look_for_rats, "Inspect this location for rats", :class => "col-sm-2 control-label" %>
       <div class="col-sm-10">
-    <%= f.hidden_field :search, :class => "form-control" %>
+    <%= f.hidden_field :look_for_rats, :class => "form-control" %>
     </div>
   </div>
 
@@ -24,7 +24,7 @@
     </div>
   </div>
 
-  <!-- Label and input for public -->
+  <!-- Label and input for city_record_ok -->
   <div class="form-group">
     <%= f.label :city_record_ok, "Bait this location", :class => "col-sm-2 control-label" %>
       <div class="col-sm-10">
@@ -58,7 +58,7 @@
 
   <!-- Label and input for email -->
   <div class="form-group">
-    <%= f.label :email, "Location", :class => "col-sm-2 control-label" %>
+    <%= f.label :email, "Email address", :class => "col-sm-2 control-label" %>
     <div class="col-sm-10">
     <%= f.text_field :email, :class => "form-control", :placeholder => "Email address" %>
     </div>
@@ -66,9 +66,9 @@
 
   <!-- Label and input for mobile -->
   <div class="form-group">
-    <%= f.label :email, "Phone", :class => "col-sm-2 control-label" %>
+    <%= f.label :mobile, "Phone number", :class => "col-sm-2 control-label" %>
     <div class="col-sm-10">
-    <%= f.text_field :email, :class => "form-control", :placeholder => "888-888-8888" %>
+    <%= f.text_field :mobile, :class => "form-control", :placeholder => "888-888-8888" %>
     </div>
   </div>
 

@@ -78,22 +78,22 @@
         </div>
       </div>
 
-      <!-- Label and input for location -->
+      <!-- Label and input for address -->
       <div class="form-group">
-        <label for="location" class="col-sm-2 control-label">
-          Location
+        <label for="address" class="col-sm-2 control-label">
+          Address
         </label>
         <div class="col-sm-10">
-          <input type="text" id="location" name="location" placeholder="Location" class="form-control" value="<%= @sighting.address%>">
+          <input type="text" id="address" name="address" placeholder="address" class="form-control" value="<%= @sighting.address%>">
         </div>
       </div>
 
-      <!-- Label and input for search -->
+      <!-- Label and input for look_for_rats -->
       <div class="form-group">
         <div class="col-sm-offset-2 col-sm-10">
           <div class="checkbox">
-            <label for="search">
-              <input type="checkbox" id="search" name="search" value="1" <%= "checked" if @sighting.search %>>
+            <label for="look_for_rats">
+              <input type="checkbox" id="look_for_rats" name="look_for_rats" value="1" <%= "checked" if @sighting.look_for_rats %>>
               Search
             </label>
           </div>
@@ -112,7 +112,7 @@
         </div>
       </div>
 
-      <!-- Label and input for public -->
+      <!-- Label and input for city_record_ok -->
       <div class="form-group">
         <div class="col-sm-offset-2 col-sm-10">
           <div class="checkbox">
