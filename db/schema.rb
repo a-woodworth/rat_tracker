@@ -11,12 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150220222500) do
+ActiveRecord::Schema.define(version: 20150221145401) do
 
   create_table "sightings", force: :cascade do |t|
     t.string   "address"
     t.boolean  "search"
-    t.boolean  "bait"
+    t.boolean  "bait",           default: true
     t.text     "description"
     t.string   "first_name"
     t.string   "last_name"
