@@ -1,22 +1,21 @@
 <style type="text/css">
-  .center-block {display: block; margin-left: auto; margin-right: auto}
   .footer {position: fixed; left: 0px;bottom: 0px; height: 30px; width: 100%}
-  .button {text-decoration: none}
 </style>
 
 <div style= "text-align: center" >
 
   <h1 class="text-center"> <strong>See a rat?</strong></h1>
-  <h3 class="text-center">Click the icon and report it!</h3>
-
-  <%= form_tag sightings_path, id: "sighting-form" do %>
+  <h3 class="text-center">Click and report it!</h3>
+  <div class col>
+    <%= form_tag sightings_path, id: "sighting-form" do %>
     <%= hidden_field_tag :latitude, "", id: "latitude" %>
     <%= hidden_field_tag :longitude, "", id: "longitude" %>
-    <%= image_tag "rat tracker.gif", :width => 500, onclick: "getLocation()" %>
-  <% end %>
+    <%= image_tag "rat.gif", :width => 450, onclick: "getLocation()" %>
+    <% end %>
+  </div>
 
   <%#= link_to (image_tag"rat tracker.gif", :width => 500), new_sighting_url%>
-  <%=image_tag "skyline.gif", :width => "100%"%>
+  <%=image_tag "skyline_2.gif", :width => "100%"%>
 </div>
 
 <script>
