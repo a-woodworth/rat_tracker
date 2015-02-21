@@ -28,7 +28,7 @@ class SightingsController < ApplicationController
      @sighting.longitude = params[:longitude]
 
      if @sighting.save
-      redirect_to complete_url, :notice => "Sighting created successfully."
+      redirect_to sighting_url(:id), :notice => "Sighting created successfully."
     else
       render 'confirm'
     end

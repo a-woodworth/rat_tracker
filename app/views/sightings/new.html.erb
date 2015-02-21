@@ -24,7 +24,7 @@
     <!-- <div class="panel panel-default"> -->
     <!-- removed border around form -->
     <div class="panel-body">
-      <%= form_tag confirm_sighting_url, :method => "get", :class => "form-horizontal" do %>
+      <%= form_tag confirm_sighting_url(:id), :method => "get", :class => "form-horizontal" do %>
       <!-- Label and input for location -->
       <div class="form-group">
         <label for="location" class="col-sm-2 control-label">
