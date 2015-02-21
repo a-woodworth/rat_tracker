@@ -15,10 +15,18 @@
 
 <!-- Responsive panel example -->
 
+
+
 <div class="row">
   <div class="col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8">
     <!-- <div class="panel panel-default"> -->
     <div class="panel-body">
+    <%= render 'form', :sighting=> @sighting %>
+
+
+
+
+
       <%= form_tag sightings_url, :method => "post", :class => "form-horizontal" do %>
       <!-- Label and input for description -->
       <div class="form-group">
